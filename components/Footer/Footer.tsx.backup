@@ -1,0 +1,66 @@
+﻿import Link from "next/link";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaUtensils } from "react-icons/fa";
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  
+  return (
+    <footer className="bg-charcoal text-white pt-12 pb-8 mt-20 rounded-t-[60px]">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          
+          <div>
+            <h2 className="font-playfair text-2xl font-bold text-white mb-4">
+              Haven<span className="text-clay-light">Dine</span>
+            </h2>
+            <p className="text-gray-300 text-sm">
+              14 Mpaka Road, Westlands,<br />Nairobi, Kenya<br />
+              Open Tue–Sun: 12pm–10:30pm
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-playfair text-lg font-bold text-clay-light mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><Link href="/" className="text-gray-300 hover:text-white">Home</Link></li>
+              <li><Link href="/menu" className="text-gray-300 hover:text-white">Menu</Link></li>
+              <li><Link href="/reserve" className="text-gray-300 hover:text-white">Reservations</Link></li>
+              <li><Link href="/about" className="text-gray-300 hover:text-white">Our Story</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-playfair text-lg font-bold text-clay-light mb-4">Contact</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li>📞 +254 712 345 678</li>
+              <li>✉️ reservations@havendine.ke</li>
+              <li>📍 14 Mpaka Road, Westlands</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-playfair text-lg font-bold text-clay-light mb-4">Follow Us</h3>
+            <div className="flex gap-3">
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-clay">
+                <FaFacebook />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-clay">
+                <FaInstagram />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-clay">
+                <FaTwitter />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-clay">
+                <FaYoutube />
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400 text-sm">
+          © {currentYear} Haven Dine Nairobi. Karibu sana — all rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
+}

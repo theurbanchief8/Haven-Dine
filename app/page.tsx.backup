@@ -1,0 +1,83 @@
+﻿import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
+import Link from "next/link";
+import { FaLeaf, FaFire, FaWineBottle, FaTree, FaUtensils } from "react-icons/fa";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-cream">
+      <Navbar />
+
+      <section className="container mx-auto px-6 py-12 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 className="font-playfair text-5xl md:text-6xl font-bold leading-tight text-charcoal">
+            Dine in the heart<br />of Nairobi
+            <FaTree className="inline ml-3 text-olive text-5xl" />
+          </h1>
+          <div className="border-l-4 border-olive pl-6 my-6">
+            <p className="text-xl text-[#4a4643]">
+              <FaLeaf className="inline mr-2 text-olive" />
+              Karen, Nairobi — Swahili fusion & seasonal feasts
+            </p>
+          </div>
+          <p className="text-lg text-[#4d4945] mb-8">
+            Wood-fired, harvest-driven, and rooted in Kenyan soil.
+            <br />Experience warm hospitality & bold flavours.
+          </p>
+          <div className="flex gap-4">
+            <Link href="/reserve" className="bg-clay text-white px-8 py-4 rounded-full font-medium hover:bg-[#8f4632] transition shadow-lg">
+              <FaUtensils className="inline mr-2" />
+              Reserve a table
+            </Link>
+            <Link href="/menu" className="border-2 border-clay text-clay px-8 py-4 rounded-full font-medium hover:bg-clay hover:text-white transition">
+              Explore menu
+            </Link>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-br from-[#dad3c9] to-[#f0e9e0] rounded-3xl h-[500px] flex items-center justify-center shadow-2xl">
+          <div className="bg-white/80 backdrop-blur p-8 rounded-2xl text-center">
+            <FaUtensils className="text-5xl text-clay mx-auto mb-4" />
+            <p className="font-playfair text-2xl text-charcoal">Karibu Haven Dine</p>
+            <p className="text-olive">est. 2019 · Karen</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream rounded-t-[60px] py-20 px-6 mt-20">
+        <div className="container mx-auto">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-charcoal mb-4">
+            A haven in the city
+            <span className="block w-24 h-1 bg-gold rounded mt-2"></span>
+          </h2>
+          <p className="text-olive text-xl italic mb-12">
+            <FaLeaf className="inline mr-3" />
+            Karibu – welcome to our table, where the Rift Valley meets the plate.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-3xl shadow-lg hover:scale-105 transition border border-sand">
+              <FaFire className="text-5xl text-clay mb-4" />
+              <h3 className="font-playfair text-2xl font-bold text-[#2a4230] mb-3">Jiko kitchen</h3>
+              <p className="text-[#4f4b47]">Open-flame cooking with indigenous hardwoods. Our signature nyama choma & plant-forward dishes.</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-lg hover:scale-105 transition border border-sand">
+              <FaWineBottle className="text-5xl text-clay mb-4" />
+              <h3 className="font-playfair text-2xl font-bold text-[#2a4230] mb-3">Kenyan wine & spirits</h3>
+              <p className="text-[#4f4b47]">Natural wines from the Rift Valley, small-batch gin from Nairobi, and fresh pressed sugarcane.</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-lg hover:scale-105 transition border border-sand">
+              <FaLeaf className="text-5xl text-clay mb-4" />
+              <h3 className="font-playfair text-2xl font-bold text-[#2a4230] mb-3">Shamba table</h3>
+              <p className="text-[#4f4b47]">Herbs and greens grown in our Karen garden. Hyper-seasonal, zero-waste philosophy.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}
