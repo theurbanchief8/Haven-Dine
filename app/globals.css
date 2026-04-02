@@ -1,6 +1,9 @@
 ﻿@import "tailwindcss";
 
 @theme {
+  /* Colors */
+  --color-clay: #a5533b;
+  --color-clay-light: #c47a62;
   --color-amber-50: #fffbeb;
   --color-amber-100: #fef3c7;
   --color-amber-400: #fbbf24;
@@ -8,23 +11,32 @@
   --color-amber-600: #d97706;
   --color-black: #0a0a0a;
   --color-white: #ffffff;
-  --color-gray-900: #111827;
-  --color-gray-700: #374151;
-  --color-gray-600: #4b5563;
-  --color-gray-500: #6b7280;
-  --color-gray-400: #9ca3af;
-  --color-gray-300: #d1d5db;
-  --color-gray-200: #e5e7eb;
+  --color-ivory: #faf7f2;
+  --color-charcoal: #2e2a28;
+  --color-gold: #b48b4b;
+  --color-sand: #e5dbcf;
+  --color-taupe: #8b7e6f;
 }
 
+/* Custom Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @keyframes pulse {
@@ -32,22 +44,39 @@
   50% { opacity: 0.7; }
 }
 
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Animation Classes */
 .animate-fadeIn {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 1s ease-out;
 }
 
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.8s ease-out;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
 }
 
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
 /* Base styles */
 body {
   font-family: var(--font-sans);
-  color: var(--color-gray-900);
-  background: linear-gradient(to bottom, #fffbeb, #ffffff);
+  color: var(--color-charcoal);
+  background: var(--color-ivory);
 }
